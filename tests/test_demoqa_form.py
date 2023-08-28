@@ -29,41 +29,7 @@ def user_to_test():
 def test_fill_and_send_form(user_to_test):
     registration_page = RegistrationPage()
     registration_page.open()
-
-    # Name
-    registration_page.type_first_name(user_to_test.first_name)
-    registration_page.type_last_name(user_to_test.last_name)
-
-    # Email
-    registration_page.type_email(user_to_test.email)
-
-    # Gender
-    registration_page.set_gender(user_to_test.gender)
-
-    # Mobile
-    registration_page.type_mobile(user_to_test.mobile)
-
-    # Date of birth
-    registration_page.set_date_of_birth(user_to_test.date_of_birth_day, user_to_test.date_of_birth_month,
-                                        user_to_test.date_of_birth_year)
-
-    # Subjects
-    registration_page.type_subjects(user_to_test.subjects)
-
-    # Hobbies
-    registration_page.set_hobbies(user_to_test.hobbies)
-
-    # Picture
-    registration_page.upload_picture(user_to_test.picture)
-
-    # Current Address
-    registration_page.type_current_address(user_to_test.current_address)
-
-    # State and City
-    registration_page.set_state_and_city(user_to_test.state, user_to_test.city)
-
-    # Click on submit button
-    registration_page.submit()
-
+    # register user
+    registration_page.register(user_to_test)
     # Check registered user info
     registration_page.should_have_registered(user_to_test)
