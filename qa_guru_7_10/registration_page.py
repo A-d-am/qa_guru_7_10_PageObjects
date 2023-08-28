@@ -56,6 +56,20 @@ class RegistrationPage:
     def submit(self):
         browser.element('#submit').click()
 
+    def register(self, user: User):
+        self.type_first_name(user.first_name)
+        self.type_last_name(user.last_name)
+        self.type_email(user.email)
+        self.set_gender(user.gender)
+        self.type_mobile(user.mobile)
+        self.set_date_of_birth(user.date_of_birth_day,user.date_of_birth_month, user.date_of_birth_year)
+        self.type_subjects(user.subjects)
+        self.set_hobbies(user.hobbies)
+        self.upload_picture(user.picture)
+        self.type_current_address(user.current_address)
+        self.set_state_and_city(user.state, user.city)
+        self.submit()
+
     def should_have_registered(self, user: User):
         browser.element('#example-modal-sizes-title-lg').should(have.text('Thanks for submitting the form'))
         browser.element('.table').all('td').even.should(
