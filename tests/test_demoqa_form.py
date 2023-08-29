@@ -1,8 +1,6 @@
-import os
-from qa_guru_7_10.registration_page import RegistrationPage
-from selene import browser, have, be
+from qa_guru_7_10.pages.registration_page import RegistrationPage
 import pytest
-from models.users import User
+from qa_guru_7_10.models.users import User
 
 
 @pytest.fixture()
