@@ -1,6 +1,6 @@
 from qa_guru_7_10.pages.registration_page import RegistrationPage
 import pytest
-from qa_guru_7_10.models import User
+from qa_guru_7_10.models.users import User
 
 
 @pytest.fixture()
