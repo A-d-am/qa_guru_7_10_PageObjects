@@ -1,5 +1,5 @@
 from selene import browser, have, be,command
-from models.users import User
+from qa_guru_7_10.models import User
 from conftest import RESOURCES_DIR
 import os
 
